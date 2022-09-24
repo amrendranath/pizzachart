@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Grid, Paper } from "@mui/material";
+import ProductsTable from "./components/ProductsTable";
+import PizzaChart from "./components/PizzaChart";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid sx={{ maxHeight: "100vh", overflow: "hidden" }} container spacing={2}>
+      <Grid item md={4} sm={12} sx={{ overflowY: "auto" }}>
+        <Paper>
+          <PizzaChart />
+        </Paper>
+      </Grid>
+      <Grid item md={8} sm={12}>
+        <Paper>
+          <ProductsTable />
+        </Paper>
+      </Grid>
+    </Grid>
   );
 }
 
